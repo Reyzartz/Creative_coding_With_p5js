@@ -1,11 +1,13 @@
-function  drop(x,y,len,depth){
+function  drop(x,y,len,z){
     this.x=x;
     this.y=y;
-    this.len=len;
-    this.speed=speed;
+    this.len=map(z,0,20,5,10);
+    this.speed=map(z,0,20,2,5);
+    this.depth=map(z,0,20,50,255)
+    this.g=map(z,0,20,0.2,0.8)
     this.draw=()=>{
         if(this.y>0){
-            stroke(depth)
+            stroke(this.depth)
             strokeWeight(2)
             line(this.x,this.y,this.x,this.y+this.len)
         }
@@ -18,13 +20,13 @@ function  drop(x,y,len,depth){
             
         }
         if(this.y>0 && this.y<innerHeight){
-            this.speed+=this.speed*g;
+            this.speed+=this.g;
             this.y+=this.speed;
             
         }
         else{
-            this.speed=speed;
-            this.y=random(-innerHeight,0);
+            this.speed=map(z,0,25,1,4);
+            this.y=random(-100,0);
             this.x=random(0,innerWidth)
         }
         this.draw();

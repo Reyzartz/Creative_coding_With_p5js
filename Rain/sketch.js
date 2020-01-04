@@ -26,7 +26,7 @@ function draw() {
 }
 function init(){
     for(let i=0;i<noOfRainDrop;i++){
-        rain.push(new drop(random(innerWidth),random(-innerHeight,0),5,random(100,255)))
+        rain.push(new drop(random(innerWidth),random(-innerHeight,0),5,random(0,20)))
     }
     for(let i=0;i<noOfCloud;i++){
         clouds.push(new cloud(random(0,innerWidth),random(0,100),random(150,200)))
