@@ -1,28 +1,27 @@
 function setup() {
-    createCanvas(500,500)
-    rectMode(CENTER)
-    sliderX=createSlider(-10,10,0,1)
-    sliderY=createSlider(-10,10,0,1)
-    noFill()
+    createCanvas(innerWidth,innerHeight)
+    len=50
+    background(0)
+    //noLoop()
+    //noFill()
 }
-let x=0,y=0
+let x=0,y=0,len,ax=0
 function draw() {
-  background(111)
-  x=sliderX.value()
-  y=sliderY.value()
-  strokeWeight(1)
-  stroke(0)
-  translate(width/2,height/2)
-  for(let i=-10;i<=10;i++){
-    line(-width/2,map(i,-10,10,-height/2,height/2),width/2,map(i,-10,10,-height/2,height/2))
-    line(map(i,-10,10,-width/2,width/2),-height/2,map(i,-10,10,-width/2,width/2),height/2)
+  stroke(80)
+  strokeWeight(2)
+  if(random(1)>0.5){
+    line(x,y,x+len,y+len)
   }
-  strokeWeight(3)
-  stroke("green")
-  line(-width/2,0,width/2,0)
-  line(0,-height/2,0,height/2)
-  stroke("red")
-  point(map(x,-10,10,-width/2,width/2),map(y,-10,10,-height/2,height/2))
-  rect(map(x,-10,10,-width/2,width/2),map(y,-10,10,-height/2,height/2),width*0.8,height*0.8)
-  
+  else{
+    line(x,y+len,x+len,y)
+  }
+  if(x<=width)
+    x+=len
+  else{
+    x=0
+    y+=len
+  }
+  if(y>=height){
+    noloop()
+  }
 }
