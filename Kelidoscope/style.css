@@ -8,6 +8,7 @@
     margin: 0;
     overflow: hidden;
     font-family: "Roboto" , sans-serif;
+    color:rgba(255, 255, 255, 0.8)
   }
 canvas{
     position: absolute;
@@ -37,7 +38,7 @@ canvas{
 nav{
     transform: translateY(0%);
     transition: 0.5s transform ease-in;
-    background-color: rgba(255,255,255,0.8);
+    background-color: rgba(0, 0, 0, 0.5);
     padding:10px
 }
 h1{
@@ -60,6 +61,7 @@ h1{
 }
 .options input{
     display: inline;
+    width:80%;
     margin: 10px 5px;
 }
 .options h3{
